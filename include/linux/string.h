@@ -476,6 +476,10 @@ __FORTIFY_INLINE char *strcpy(char *p, const char *q)
 #undef __underlying_strncpy
 #endif
 
+#ifndef __HAVE_ARCH_STPCPY
+extern char *stpcpy(char *__restrict, const char *__restrict__);
+#endif
+
 /**
  * memcpy_and_pad - Copy one buffer to another with padding
  * @dest: Where to copy to
